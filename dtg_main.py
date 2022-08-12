@@ -35,7 +35,7 @@ elif day_trip_start !="space":
 restaurant_ordinary_list = ["Big Boy," "Carls Junior", "Pei Wei"]
 restaurant_exotic_list = ["The Pearl Imporium," "Fishmongers," "Burger International"]
 
-bk_lunch = input("Select a meal plan. Do you feel ordinary or exotic?:")
+bk_lunch = input("Select a meal plan. Do you feel like the ordinary or exotic?: ")
 
 if bk_lunch == "ordinary":
     import random
