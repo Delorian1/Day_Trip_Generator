@@ -26,11 +26,6 @@ print('Hello ' + your_name + ' Welcome to the Total Recall Live Action ' + 'Them
     
 day_trip_start = input("Type space or sea to begin your daytrip! ")
 
-your_name_2 = input("Please enter your name: ")
-print('Hello ' + your_name + ' Welcome to the Total Recall Live Action ' + 'Theme Parks. Where would you like to go?')
-    
-day_trip_start_2 = input("Type space or sea to begin your daytrip! ")
-
 destination_space_list = ["Tomorrowland", "Zagama Beach Saturn", "Olduvai Ruins Mars"]
 detination_water_list = ["Atlanis Underwater Theme Park", "Carnival Day Cruise", "Sea World"]
 
@@ -58,10 +53,10 @@ elif bk_lunch != "space":
 transportation_space_list = ["SpaceX Mercedes Rocket ", "Omni Space Shuttle ", "Ark Stargate "]
 transportation_water_list = ["MagLev Bullet train ", "Vegas Submarines ", "Torpedo Cruises "]
 
-if bk_lunch  == "ordinary":
+if day_trip_start  == "space":
     print(random.choice(transportation_space_list) + " Fantastic! You'll be traveling in style! Next up, entertainment. ")
 
-elif bk_lunch != "ordinary":
+elif day_trip_start != "space":
     print(random.choice(transportation_water_list) + " Fantastic! You'll be traveling in style! Next up, entertainment. ")
 
 # # As a user, I want a form of entertainment to be randomly selected for my day trip.
@@ -76,29 +71,35 @@ elif bk_lunch != "ordinary":
     print(random.choice(entertainment_water_list) + "Wow! Are you going to have a blast! Next, let's confirm your reservation.")
 
 
-#  # As a user, I want to be able to randomly re-select a destination, restaurant, mode of transportation, and/or form of entertainment if I don’t like one or more of those things.
+# As a user, I want to be able to randomly re-select a destination, restaurant, mode of transportation, and/or form of entertainment if I don’t like one or more of those things.
 
-# day_trip_confirmation = input("Would you like to book your all-inclusive daytrip? Type y for yes, n for no: ")
+day_trip_confirmation = input("Would you like to book your all-inclusive daytrip? Type y for yes, n for no: ")
 
-# if day_trip_confirmation == "y":
-#    print("Great deal! Let's complete your reservation.")
+day_trip_confirmation = YES
+continue_daytrip = True
 
-# else:
-#      print(your_name_2)
+while day_trip_confirmation == True:
+    if continue_daytrip == True:
+       day_trip_confirmation = False
+       print("Ok, let's finalize and lock-in your reservation.") 
+    else: 
+        print("We're sorry for the matches. If at first you don't succeed, try try again.")
+        print(your_name_2)
     
-# As a user, I want to be able to confirm that my day trip is “complete” once I like all of the random selections.
+# # As a user, I want to be able to confirm that my day trip is “complete” once I like all of the random selections.
 
-day_trip_confirmation =  input(" Would you like to finalize your revervation? Type confirm: ")
-    if day_trip_confirmation = "confirm":
-        print('Great choice! You have selected the {destination_space_list}.\
-            Included in your day trip is the {entertainment_space_list}.\
-                entertainment package. You will travel in style via {transportation_space_list}.\
-                    You will get a breakfast and lunch pass for one and dine at {}.')
+day_trip_confirmation =  input(" Would you like to finalize your revervation? Type yes to confirm: ")
 
-    else:
-        print(day_trip)
+if day_trip_confirmation == "yes":
+    print(" Your reservation is complete. Please see your reservation details below." + "Thank you for choosing Total Recall Live Action Theme Parks.")
+    
+# # # As a user, I want to display my completed trip in the console.
 
-# day_trip_complete = input("Do you wish to complete your reservation? Type Y for yes / N for No.")
-# # As a user, I want to display my completed trip in the console.
+if day_trip_confirmation == "yes":
+#     print('Great choice! You have selected the {destination_space_list}.\
+#             Included in your day trip is the {entertainment_space_list}.\
+#                 entertainment package. You will travel in style via {transportation_space_list}.\
+#                     You will get a breakfast and lunch pass for one and dine at {}.')
 
-# # As a developer, I want all of my functions to have a Single Responsibility. Res
+
+# # # As a developer, I want all of my functions to have a Single Responsibility. Res
