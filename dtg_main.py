@@ -73,33 +73,29 @@ elif bk_lunch != "ordinary":
 
 # As a user, I want to be able to randomly re-select a destination, restaurant, mode of transportation, and/or form of entertainment if I don’t like one or more of those things.
 
-day_trip_confirmation = input("Would you like to book your all-inclusive daytrip? Type y for yes, n for no: ")
-
-day_trip_confirmation = YES
-continue_daytrip = True
-
-while day_trip_confirmation == True:
-    if continue_daytrip == True:
-       day_trip_confirmation = False
-       print("Ok, let's finalize and lock-in your reservation.") 
-    else: 
-        print("We're sorry for the matches. If at first you don't succeed, try try again.")
-        print(your_name_2)
-    
-# # As a user, I want to be able to confirm that my day trip is “complete” once I like all of the random selections.
-
-day_trip_confirmation =  input(" Would you like to finalize your revervation? Type yes to confirm: ")
-
+day_trip_confirmation = input("Would you like to book your all-inclusive daytrip? Type yes or no: ").lower()
 if day_trip_confirmation == "yes":
+    print("Great, let's finalize and lock-in your reservation.") 
+
+else:
+    print("Sorry to see that the choices were not to your liking." + "Let's see if we can pair you up with a trip of a lifetime." + "If at first you don't succeed, try try again.")
+    
+  
+    
+#  As a user, I want to be able to confirm that my day trip is “complete” once I like all of the random selections.
+
+day_trip_confirmation_2 =  input(" Would you like to finalize your revervation? Type yes to confirm: ").lower()
+
+if day_trip_confirmation_2 == "yes":
     print(" Your reservation is complete. Please see your reservation details below." + "Thank you for choosing Total Recall Live Action Theme Parks.")
     
 # # # As a user, I want to display my completed trip in the console.
 
-if day_trip_confirmation == "yes":
-#     print('Great choice! You have selected the {destination_space_list}.\
-#             Included in your day trip is the {entertainment_space_list}.\
-#                 entertainment package. You will travel in style via {transportation_space_list}.\
+def day_trip_confirmation_2 ():
+#     print('Great choice! You have selected the' + {destination_space_list} +
+#             'Included in your day trip is the' + {entertainment_space_list} +
+#                 'entertainment package. You will travel in style via' + {transportation_space_list}. + 
 #                     You will get a breakfast and lunch pass for one and dine at {}.')
 
 
-# # # As a developer, I want all of my functions to have a Single Responsibility. Res
+# As a developer, I want all of my functions to have a Single Responsibility. Rember each function should do just one thing!
