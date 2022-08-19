@@ -93,11 +93,6 @@ entertainment_confirmation =  input("Would you like to continue with selection? 
 day_trip_book = input("Would you like to book your all-inclusive daytrip? Type yes or no: ").lower()
 
 
-
-
-
-
-
 #  As a user, I want to be able to confirm that my day trip is “complete” once I like all of the random selections.
 
 day_trip_confirmation =  input("Would you like to finalize your revervation? Type yes to confirm: ").lower()
@@ -105,39 +100,59 @@ day_trip_confirmation =  input("Would you like to finalize your revervation? Typ
 if day_trip_confirmation == "yes":
     print(" Your reservation is complete. Please see your reservation details below." + "Thank you for choosing Total Recall Live Action Theme Parks.")
 
+
 destination_space_list = ["Tomorrowland", "Zagama Beach Saturn", "Olduvai Ruins Mars"]
 restaurant_space_list = ["Big Boy", "Carls Junior", "Pei Wei"]
 transportation_space_list = ["SpaceXMercedes Rocket", "Omni Space Shuttle", "Ark Stargate"]
 entertainment_space_list = ["Jet Pack rentals", "Hanging pools", "All ride daypass", "Trackless train sky tours"]
-
-destination_sea_list = ["Atlanis Underwater Theme Park", "Carnival Day Cruise", "Sea World"]
-restaurant_sea_list = ["The Pearl Imporium", "Fishmongers", "Burger International"]
-transportation_sea_list = ["MagLev Bullet train", "Vegas Submarines", "Torpedo Cruises"]
-entertainment_sea_list = ["Mini sub tours", "All day ride pass", "Botanical gardens", "Trench Tours"]
-
 
 choice_destination_space_list = choice(destination_space_list)
 choice_restaurant_space_list = choice(restaurant_space_list)
 choice_restaurant_space_list = choice(restaurant_space_list)
 choice_entertainment_space_list = choice(entertainment_space_list)
 
+#recall_1
+
+print("You have chosen "+ "Destination:" + choice(destination_space_list))
+print("You will dine in style at " + "Dining: " + choice(restaurant_space_list))
+print("You will picked up at the port of call and taken to your destination via " + "Transportation" + choice(transportation_space_list))
+print("Your all inclusive daytrip will include an entertainment package: " + "Entertanment" + choice(entertainment_space_list))
+print("Thank you for booking your daytrip with Total Recall Live Action Theme Parks where we make your dreams a reality!")
+
+print ("Type Y to continue")
+
+c1 = choice(destination_space_list)
+c2 = choice(restaurant_space_list)
+c3 = choice(transportation_space_list)
+c4 = choice(entertainment_space_list)
+
+
+#recall_2
+
+estination_sea_list = ["Atlanis Underwater Theme Park", "Carnival Day Cruise", "Sea World"]
+restaurant_sea_list = ["The Pearl Imporium", "Fishmongers", "Burger International"]
+transportation_sea_list = ["MagLev Bullet train", "Vegas Submarines", "Torpedo Cruises"]
+entertainment_sea_list = ["Mini sub tours", "All day ride pass", "Botanical gardens", "Trench Tours"]
+
 choice_destination_sea_list = choice(destination_sea_list)
 choice_restaurant_sea_list = choice(restaurant_sea_list)
 choice_transportation_sea_list = choice(transportation_sea_list)
 choice_entertainment_sea_list = choice(entertainment_sea_list)
 
-print("You have chosen "+ "Destination:" + choice(destination_list))
-print("You will dine in style at " + "Dining: " + choice(restaurant_list))
-print("You will picked up at the port of call and taken to your destination via " + "Transportation" + choice(transportation_list))
-print("Your all inclusive daytrip will include an entertainment package: " + "Entertanment" + choice(entertainment_list))
+print("You have chosen "+ "Destination:" + choice(destination_sea_list))
+print("You will dine in style at " + "Dining: " + choice(restaurant_sea_list))
+print("You will picked up at the port of call and taken to your destination via " + "Transportation" + choice(transportation_sea_list))
+print("Your all inclusive daytrip will include an entertainment package: " + "Entertanment" + choice(entertainment_sea_list))
 print("Thank you for booking your daytrip with Total Recall Live Action Theme Parks where we make your dreams a reality!")
 
 print ("Type Y to continue")
 
-c1 = choice(destination_list)
-c2 = choice(restaurant_list)
-c3 = choice(transportation_list)
-c4 = choice(entertainment_list)
+c5 = choice(destination_sea_list)
+c6 = choice(restaurant_sea_list)
+c7 = choice(transportation_sea_list)
+c8 = choice(entertainment_sea_list)
+
+
 
 # As a user, I want to display my completed trip in the console.
 #save itenerary
