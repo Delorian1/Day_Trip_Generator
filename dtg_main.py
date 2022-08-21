@@ -23,6 +23,8 @@ entertainment_sea_list = ["Mini sub tours", "All day ride pass", "Botanical gard
 
 
 # As a user, I want a destination to be randomly selected for my day trip.
+
+
 from multiprocessing.context import SpawnContext
 from tkinter.messagebox import YES
 
@@ -43,7 +45,7 @@ destination_sea_list = ["Atlanis Underwater Theme Park", "Carnival Day Cruise", 
 def pick_destination():
     if day_trip_start =="space":
         random_destination = random.choice(destination_space_list)
-        user_choice = input(f'You have selected {random_destination} our most popular destination out of our Space Odessey line up. Would you like to keep this? y or n ?')
+        user_choice = input(f'You have selected {random_destination} our most popular destination out of our Space Odessey line up. Would you like to keep this? y or n ?').lower()
         making_choice == True
         while making_choice ==True:
             if user_choice == "y":
@@ -51,12 +53,12 @@ def pick_destination():
                 return random_destination
             elif user_choice =="n":
                 random_destination = random.choice(destination_space_list)
-                user_choice = input(f'You have selected {random_destination} our most popular destination out of our Space Odessey line up. Would you like to keep this? y or n ?')    
+                user_choice = input(f'You have selected {random_destination} our most popular destination out of our Space Odessey line up. Would you like to keep this? y or n ?').lower()    
 # store choices as a variable  
     
     elif day_trip_start =="sea":
         random_destination = random.choice(destination_sea_list)
-        user_choice = input(f'You have selected {random_destination} our most popular destination out of our Space Odessey line up. Would you like to keep this? y or n ?')
+        user_choice = input(f'You have selected {random_destination} our most popular destination out of our Space Odessey line up. Would you like to keep this? y or n ?').lower()
         making_choice == True
         while making_choice ==True:
             if user_choice == "y":
@@ -64,13 +66,13 @@ def pick_destination():
                 return random_destination
             elif user_choice =="n":
                 random_destination = random.choice(destination_space_list)
-                user_choice = input(f'You have selected {random_destination} our most popular destination out of our Space Odessey line up. Would you like to keep this? y or n ?')  
+                user_choice = input(f'You have selected {random_destination} our most popular destination out of our Space Odessey line up. Would you like to keep this? y or n ?').lower()  
 
 #function call and variable to save return
 confirmed_destination = pick_destination()
-
-
+#--------------------------------------------------------------------------------------------------------
 # As a user, I want a restaurant to randomly selected. 
+
 restaurant_space_list = ["Big Boy", "Carls Junior", "Pei Wei"]
 restaurant_sea_list = ["The Pearl Imporium", "Fishmongers", "Burger International"]
 
@@ -80,15 +82,15 @@ bk_lunch = input("Next up meals. Breakfast and lunches are included on all daytr
 def pick_restaurant():
     if bk_lunch =="space":
         random_restaurant = random.choice(restaurant_space_list)
-        user_choice = input(f'Yum! You have selected {random_restaurant} to dine at. Would you like to keep this? y or n ?').lower()
+        user_choice = input(f'Yum! You have selected {random_restaurant} for your meal package. Would you like to keep this? y or n ?').lower()
         making_choice == True
         while making_choice ==True:
             if user_choice == "y":
-                print(f' {random_restaurant} has been confirmed. Up next, transportation.')
+                print(f'{random_restaurant} has been confirmed. Excellent choice! Let's select your mode of transportation.')
                 return random_restaurant
             elif user_choice =="n":
                 random_restaurant = random.choice(restaurant_space_list)
-                user_choice = input(f'Yum! You have selected {random_restaurant} to dine at. Would you like to keep this? y or n ?').lower()
+                user_choice = input(f'Yum! You have selected {random_restaurant} for your meal package. Would you like to keep this? y or n ?').lower()
 # store choices as a variable  
     
     elif bk_lunch =="sea":
@@ -97,22 +99,15 @@ def pick_restaurant():
         making_choice == True
         while making_choice ==True:
             if user_choice == "y":
-                print(f' {random_restaurant} has been confirmed. Up next, transportation.')
+                print(f' {random_restaurant} has been confirmed. Excellent choice! Let's select your mode of transportation.')
                 return random_restaurant
             elif user_choice =="n":
                 random_restaurant = random.choice(restaurant_sea_list)
-                user_choice = input(f'Yum! You have selected {random_restaurant} to dine at. Would you like to keep this? y or n ?')
+                user_choice = input(f'Yum! You have selected {random_restaurant} to dine at. Would you like to keep this? y or n ?').lower()
 #function call and variable to save return
 confirmed_meals = pick_restaurant()
 
-
-if day_trip_start == "space":
-    print(random.choice(restaurant_space_list) + " Excellent choice! Let's select your mode of transportation.")
-  
-elif day_trip_start != "space":
-    print(random.choice(restaurant_sea_list) + " Excellent choice! Let's select your mode of transportation.")
-
-bk_lunch_confirm = input("Would you like to continue with selection? Type yes or no: ").lower()
+#--------------------------------------------------------------------------------------------------------
 
 # As a user, I want a mode of transportation to be randomly selected for my day trip.
 
@@ -127,6 +122,37 @@ elif day_trip_start != "space":
 
 transportation_confirmation = input("Would you like to continue with selection? Type yes or no: ").lower()
 
+
+def pick_transportation():
+    if transportation_start =="space":
+        random_transportation = random.choice(transportation_space_list)
+        user_choice = input(f'You have selected {random_transportation}.' + "Fantastic! You'll be traveling in style using our state of the art travel systems!" + "Would you like to keep this? y or n ?").lower()
+        making_choice == True
+        while making_choice ==True:
+            if user_choice == "y":
+                print(f' {random_transportation} has been confirmed. Next up, entertainment.')
+                return random_transportation
+            elif user_choice =="n":
+                random_transportation = random.choice(transportation_space_list)
+                user_choice = input(f'You have selected {random_transportation}.' + "Fantastic! You'll be traveling in style using our state of the art travel systems!" + "Would you like to keep this? y or n ?").lower()   
+# store choices as a variable  
+    
+    elif transportation_start =="sea":
+        random_transportation = random.choice(transportation_sea_list)
+        user_choice = input(f'You have selected {random_transportation}.' + "Fantastic! You'll be traveling in style using our state of the art travel systems!" + "Would you like to keep this? y or n ?").lower()
+        making_choice == True
+        while making_choice ==True:
+            if user_choice == "y":
+                print(f' {random_transportation} has been confirmed. Next up, entertainment.')
+                return random_transportation
+            elif user_choice =="n":
+                random_transportation = random.choice(transportation_space_list)
+                user_choice = input(f'You have selected {random_transportation}.' + "Fantastic! You'll be traveling in style using our state of the art travel systems!" + "Would you like to keep this? y or n ?").lower()
+
+#function call and variable to save return
+confirmed_destination = pick_transportation()
+
+#------------------------------------------------------------------------------
 # # As a user, I want a form of entertainment to be randomly selected for my day trip.
 
 entertainment_space_list = ["Jet Pack rentals ", "Hanging pools ", "All ride daypass ", "Trackless train sky tours "]
