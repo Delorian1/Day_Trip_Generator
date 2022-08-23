@@ -1,13 +1,10 @@
 import random
 from random import choice
 
-
-
-
-
 # As a developer, I want to make at least three commits with descriptive messages.
 
 # As a developer, I want to store my destinations, restaurants, mode of transportation, and entertainment selections in their own separate lists.
+
 # recall_1
 destination_space_list = ["Tomorrowland", "Zagama Beach Saturn", "Olduvai Ruins Mars"]
 restaurant_space_list = ["Big Boy", "Carls Junior", "Pei Wei"]
@@ -113,13 +110,6 @@ confirmed_meals = pick_restaurant()
 
 # As a user, I want a mode of transportation to be randomly selected for my day trip.
 
-# if day_trip_start  == "space":
-#     print(random.choice(transportation_space_list) + " Fantastic! You'll be traveling in style! Next up, entertainment. ")
-
-# elif day_trip_start != "space":
-#     print(random.choice(transportation_sea_list) + " Fantastic! You'll be traveling in style! Next up, entertainment. ")
-
-# # transportation_confirmation = input("Would you like to continue with selection? Type yes or no: ").lower()
 transportation_space_list = ["SpaceX Mercedes Rocket ", "Omni Space Shuttle ", "Ark Stargate "]
 transportation_sea_list = ["MagLev Bullet train ", "Vegas Submarines ", "Torpedo Cruises "]
 
@@ -149,25 +139,14 @@ def pick_transportation():
                 return random_transportation
             elif user_choice == "n":
                 random_transportation = random.choice(transportation_sea_list)
-                user_choice = input(f'You have selected {random_transportation}.' + "Fantastic! You'll be traveling in style using our state of the art travel systems!" + "Would you like to keep this? y or n ?").lower()
+                user_choice = input(f'You have selected {random_transportation}.' + "Fantastic! You'll be traveling in style using our state of the art travel systems!" + "Would you like to keep this? y or n ? ").lower()
 
 # #function call and variable to save return
 confirmed_transportation = pick_transportation()
 
-# #------------------------------------------------------------------------------
-# # # As a user, I want a form of entertainment to be randomly selected for my day trip.
+#------------------------------------------------------------------------------
+# As a user, I want a form of entertainment to be randomly selected for my day trip.
 
-# entertainment_space_list = ["Jet Pack rentals ", "Hanging pools ", "All ride daypass ", "Trackless train sky tours "]
-# entertainment_sea_list = ["Mini sub tours ", "All day ride pass ", "Botanical gardens ", "Trench Tours "]
-
-# # if entertainment_start  == "space":
-# #     print(random.choice(entertainment_space_list) + "Wow! You are going to love your entertainment package with free replay! Next, let's confirm your reservation.")
-
-# # elif entertainment_start != "space":
-# #     print(random.choice(entertainment_sea_list) + "Wow! Are you going to have a blast! Next, let's confirm your reservation.")
-
-# # entertainment_confirmation =  input("Would you like to continue with selection? Type yes or no: ").lower()
-# #-----------------------------------------------------------------------------------------------------------
 entertainment_space_list = ["Jet Pack rentals ", "Hanging pools ", "All ride daypass ", "Trackless train sky tours "]
 entertainment_sea_list = ["Mini sub tours ", "All day ride pass ", "Botanical gardens ", "Trench Tours "]
 
@@ -180,7 +159,7 @@ def pick_entertainment():
         making_choice = True
         while making_choice == True:
             if user_choice == "y":
-                print(f'You have confirmed {random_entertainment}. Meal selection is next')
+                print(f'You have confirmed {random_entertainment}.')
                 return random_entertainment
             elif user_choice == "n":
                 random_entertainment = random.choice(entertainment_space_list)
@@ -203,29 +182,17 @@ def pick_entertainment():
 confirmed_entertainment = pick_entertainment()
 
 # #-------------------------------------------------------------------------------------------------
-# # `# As a user, I want to be able to randomly re-select a destination, restaurant, mode of transportation, and/or form of entertainment if I don’t like one or more of those things.
+# As a user, I want to be able to randomly re-select a destination, restaurant, mode of transportation, and/or form of entertainment if I don’t like one or more of those things.
 
-# # day_trip_book = input("Would you like to book your all-inclusive daytrip? Type yes or no: ").lower()
-
-
-# # #  As a user, I want to be able to confirm that my day trip is “complete” once I like all of the random selections.
-
-# # day_trip_confirmation =  input("Would you like to finalize your revervation? Type yes to confirm: ").lower()
-
-# #if day_trip_confirmation == "yes":
-print(" Your reservation is complete. Please see your itenerary below." + "Thank you for choosing Total Recall Live Action Theme Parks.")
-print(f'Thank you for confirming your choices.' + 'Destination {confirmed_destination}.' + 'Breakfast and lunch will be catered by {confirmed_meals}.' + 'Your transportation will be via {confirmed_transportation}.' + 'You have selected the {confirmed_entertainment} package.')
-
+#  As a user, I want to be able to confirm that my day trip is “complete” once I like all of the random selections.
 
 # As a user, I want to display my completed trip in the console.
 #save itenerary
+
+print("Your reservation is complete. Please see your itenerary below.") 
+print(f'Thank you for confirming your choices. Your confirmed destination is {confirmed_destination}.')
+print(f'Breakfast and lunch will be catered by {confirmed_meals}')
+print(f'Your transportation will be via {confirmed_transportation}')
+print(f'You have selected the {confirmed_entertainment}package.')
+print('Thank you for choosing Total Recall Live Action Theme Parks. Looking forward to seeing you there!')
    
-
-# def day_trip_confirmation():
-#     if day_trip_start == "space":
-#        print('Great choice! You have selected the' + random.choice().final_destination())
-
-# elif day_trip_start != "space":
-#      print('Great choice! You have selected the' + random.choice().final_destination_2())
-
-# As a developer, I want all of my functions to have a Single Responsibility.Remember each function should do just one thing 
