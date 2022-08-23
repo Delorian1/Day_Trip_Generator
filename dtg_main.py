@@ -6,16 +6,16 @@ from random import choice
 # As a developer, I want to store my destinations, restaurants, mode of transportation, and entertainment selections in their own separate lists.
 
 # recall_1
-destination_space_list = ["Tomorrowland", "Zagama Beach Saturn", "Olduvai Ruins Mars"]
-restaurant_space_list = ["Big Boy", "Carls Junior", "Pei Wei"]
+destination_space_list = ["Tomorrowland", "Zagama Beach Saturn", "Olduvai Ruins Mars", "Gargantua", "Elysium"]
+restaurant_space_list = ["Big Boy", "Carls Junior", "Pei Wei", "Gusses Galaxy Grill"]
 transportation_space_list = ["SpaceXMercedes Rocket", "Omni Space Shuttle", "Ark Stargate"]
-entertainment_space_list = ["Jet Pack rentals", "Hanging pools", "All ride daypass", "Trackless train sky tours"]
+entertainment_space_list = ["Jet Pack rentals", "Hanging Pools", "All ride daypass", "Trackless train sky tours"]
 
 # recall_2
 destination_sea_list = ["Atlanis Underwater Theme Park", "Carnival Day Cruise", "Sea World"]
-restaurant_sea_list = ["The Pearl Imporium", "Fishmongers", "Burger International"]
-transportation_sea_list = ["MagLev Bullet train", "Vegas Submarines", "Torpedo Cruises"]
-entertainment_sea_list = ["Mini sub tours", "All day ride pass", "Botanical gardens", "Trench Tours"]
+restaurant_sea_list = ["The Pearl Imporium", "Fishmongers", "Good Burger International"]
+transportation_sea_list = ["MagLev Bullet train", "Vegas Submarines", "Torpedo Cruises", "Total Rekall Space VR"]
+entertainment_sea_list = ["Mini sub tours", "All day ride pass", "Botanical gardens", "Trench Tours", "Total Rekall VR"]
 
 
 
@@ -30,6 +30,7 @@ your_name = input("Please enter your name: ")
 
 def sea_or_space():
     print('Hello ' + your_name + ' Welcome to the Total Recall Live Action ' + 'Theme Parks. Where would you like to go?')
+    print("Please remember, once you pick a destination, you must keep that selection. ")
     user_choice = input("Type space or sea to begin your daytrip! ").lower()
     return user_choice 
 day_trip_start = sea_or_space()
@@ -37,7 +38,7 @@ day_trip_start = sea_or_space()
 #-------------------------------------------------------------------------------------------------------
 # function that picks destination based on user shoice of sea or space
 
-destination_space_list = ["Tomorrowland", "Zagama Beach Saturn", "Olduvai Ruins Mars"]
+destination_space_list = ["Tomorrowland", "Zagama Beach Saturn", "Olduvai Ruins Mars", "Gargantua", "Elysium"]
 destination_sea_list = ["Atlanis Underwater Theme Park", "Carnival Day Cruise", "Sea World"]
 
 def pick_destination():
@@ -52,13 +53,13 @@ def pick_destination():
             elif user_choice == "n":              
                 random_destination = random.choice(destination_space_list)
                 user_choice = input(f'You have selected {random_destination} our most popular destination out of our Space Odessey line up. Would you like to keep this? y or n ? ').lower()    
+            
 # store choices as a variable  
     
     elif day_trip_start == "sea":
         random_destination = random.choice(destination_sea_list)
         user_choice = input(f'You have selected {random_destination} our most popular destination out of our Iliad line up. Would you like to keep this? y or n ? ').lower()
         making_choice = True
-
         while making_choice == True:
             if user_choice == "y":
                 print(f'{random_destination} has been confirmed. Meal selection is next.')
@@ -72,8 +73,8 @@ confirmed_destination = pick_destination()
 # #--------------------------------------------------------------------------------------------------------
 # # As a user, I want a restaurant to randomly selected. 
 
-restaurant_space_list = ["Big Boy", "Carls Junior", "Pei Wei"]
-restaurant_sea_list = ["The Pearl Imporium", "Fishmongers", "Burger International"]
+restaurant_space_list = ["Big Boy", "Carls Junior", "Pei Wei", "Gusses Galaxy Grill"]
+restaurant_sea_list = ["The Pearl Imporium", "Fishmongers", "Good Burger International", ]
 
 bk_lunch = input("Breakfast and lunches are included on all daytrip packages. Please type space or sea to reserve your meal reservation: ").lower()
 # function that picks destination based on user shoice of sea or space
@@ -115,6 +116,7 @@ transportation_sea_list = ["MagLev Bullet train ", "Vegas Submarines ", "Torpedo
 
 transportation_start = input("You will leave from a predetermined port of call before traveling to your destination. Please type sea or space to begin: ").lower()
 
+
 def pick_transportation():
     if transportation_start == "space":
         random_transportation = random.choice(transportation_space_list)
@@ -147,8 +149,8 @@ confirmed_transportation = pick_transportation()
 #------------------------------------------------------------------------------
 # As a user, I want a form of entertainment to be randomly selected for my day trip.
 
-entertainment_space_list = ["Jet Pack rentals ", "Hanging pools ", "All ride daypass ", "Trackless train sky tours "]
-entertainment_sea_list = ["Mini sub tours ", "All day ride pass ", "Botanical gardens ", "Trench Tours "]
+entertainment_space_list = ["Jet Pack rentals ", "Hanging Pools ", "All ride daypass ", "Trackless train sky tours", "Total Rekall SpaceVR"]
+entertainment_sea_list = ["Mini sub tours ", "All day ride pass ", "Botanical gardens ", "Trench Tours ", "Total Rekall Sea VR"]
 
 entertainment_start = input("Our entertainment packages are all complementary for new customers. Please type space or sea to reserve your entertainment package: ").lower()
 
@@ -175,7 +177,7 @@ def pick_entertainment():
                 print(f' {random_entertainment} package. You are going to love your entertainment package with free replay! Would you like to keep this? y or n ? ').lower() 
                 return random_entertainment
             elif user_choice == "n":
-                random_entertainment = random.choice(entertainment_space_list)
+                random_entertainment = random.choice(entertainment_sea_list)
                 user_choice = input(f'You have selected our {random_entertainment} package. You are going to love your entertainment package with free replay! Would you like to keep this? y or n ? ').lower()  
 
 #function call and variable to save return
